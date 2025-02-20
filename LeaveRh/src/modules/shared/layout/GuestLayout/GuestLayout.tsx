@@ -5,6 +5,7 @@ interface MainLayoutProps {
 }
 
 const GuestLayout = ({ children }: MainLayoutProps) => {
+    
   return <Fragment>{children}</Fragment>;
 };
 
