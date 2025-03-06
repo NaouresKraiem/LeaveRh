@@ -22,8 +22,8 @@ const routes: RouteConfig[] = [
   },
   {
     // guard: GuestGuard,
-    path: `${baseAuthPath}/home`,
-    component: lazy(() => import("../../Jobs/features/Jobs/Jobs")),
+    path: `${baseAuthPath}/jobs/create`,
+    component: lazy(() => import("../../Jobs/features/CreateJob/CreateJob")),
     layout: MainLayout,
   },
 ];
