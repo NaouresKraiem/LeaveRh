@@ -18,6 +18,12 @@ const routes: RouteConfig[] = [
     component: lazy(() => import("../features/Login/Login")),
     // layout: GuestLayout,
   },
+  {
+    // guard: GuestGuard,
+    path: `${baseAuthPath}/signup`,
+    component: lazy(() => import("../features/Signup/Signup")),
+    // layout: GuestLayout,
+  },
 ];
 
 export default routes;

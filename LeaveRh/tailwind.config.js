@@ -12,6 +12,9 @@ module.exports = {
       backgroundImage: {
         layout: "background: linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
       },
+      colors: {
+        "color-primary": "#904fd1",
+      },
     },
   },
   plugins: [],

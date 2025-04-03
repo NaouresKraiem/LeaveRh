@@ -1,0 +1,13 @@
+
+.login-left-side-form {
+  padding: 112px 300px;
+}
+.login-img {
+  object-fit: cover;
+  height: 100%;
+}
+img {
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-image: url(/src/assets/images/background.png) !important;
+}
