@@ -4,10 +4,10 @@ import { Controller, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 
-import { IAuthData, IForm } from "../../../shared/types";
+import { IAuthData, IForm } from "../../../shared/types/types";
 
 import { useNavigate } from "react-router-dom";
-import PrimaryButton from "../../../shared/components/PrimaryButton/PrimaryButton";
+import ButtonPrimary from "../../../shared/components/ButtonPrimary/ButtonPrimary";
 import { GoogleLogin } from "@react-oauth/google";
 import supabase from "../../../../../supabaseClient";
 
@@ -39,13 +39,9 @@ export default function Form({ title, handleAuth, isSignup }: IForm) {
   });
 
   const onSubmit = async (data: IAuthData) => {
-    const { email, password, name } = data;
-    await handleAuth(email, password, name);
-    if (!isSignup) navigate("/");
-    else {
-      navigate("/auth/login");
-    }
+    await handleAuth(data);
   };
+
   const handleSuccess = async (credentialResponse: any) => {
     const { credential } = credentialResponse;
 
@@ -63,6 +59,10 @@ export default function Form({ title, handleAuth, isSignup }: IForm) {
 
   const handleError = () => {
     console.error("Google Login Failed");
+  };
+
+  const reactClickHandler = (e: any) => {
+    console.log(e);
   };
 
   return (
@@ -115,9 +115,7 @@ export default function Form({ title, handleAuth, isSignup }: IForm) {
         </div>
 
         <div className="flex flex-col gap-4">
-          <PrimaryButton text={title} onClick={onclick}>
-            {title}
-          </PrimaryButton>
+          <ButtonPrimary text={title} htmlType={"submit"} />
           <GoogleLogin onSuccess={handleSuccess} onError={handleError} />
         </div>
       </form>

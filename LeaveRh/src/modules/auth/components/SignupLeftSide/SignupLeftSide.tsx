@@ -2,30 +2,28 @@ import { Link } from "react-router-dom";
 import { handleSignup } from "../../../../api/handleSignup";
 import Footer from "../Footer/Footer";
 import Form from "../Form/Form";
-import "../AuthLeftSide.css";
+import Header from "../Header/Header";
 import logo from "../../../../assets/images/Logo.png";
+import "../AuthLeftSide.css";
+
 export default function SignupLeftSide() {
   return (
     <div className="login-left-side-container">
       <div className="login-left-side-form">
         <div className="">
           <img src={logo} className="" />
-          <Form title="Sign Up" handleAuth={handleSignup} isSignup={true} />
+          <Header title="Sign up" />
+          <Form title="Log In" handleAuth={handleSignup} isSignup={true} />
         </div>
 
-        <div className="flex gap-1 items-center justify-center mt-2">
-          <p className="text-[#667085] text-sm font-normal">{`Don't have an account ?`}</p>
-          <Link
-            to={`/auth/login`}
-            className="text-purple-700 hover:underline text-sm"
-          >
+        <div className="create-account">
+          <p>{`Already have an account?`}</p>
+          <Link to={`/auth/login`} className="link-button">
             {"Login"}
           </Link>
         </div>
       </div>
-      <div className="">
-        <Footer />
-      </div>
+      <Footer />
     </div>
   );
 }

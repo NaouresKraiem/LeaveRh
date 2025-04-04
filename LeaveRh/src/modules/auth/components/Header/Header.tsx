@@ -1,4 +1,4 @@
-import { IHeader } from "../../../shared/types";
+import { IHeader } from "../../../shared/types/types";
 
 const Header = ({ title, subtitle }: IHeader) => {
   return (

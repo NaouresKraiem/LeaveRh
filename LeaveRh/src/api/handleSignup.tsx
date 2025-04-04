@@ -1,32 +1,43 @@
 import supabase from "../../supabaseClient";
 
-export const handleSignup = async (
-  email: string,
-  password: string,
-  name: string
-) => {
-  const { data, error } = await supabase.auth.signUp({
-    email,
-    password,
-  });
+export const handleSignup = async (data: {
+  email: string;
+  password: string;
+  name?: string;
+}) => {
+  try {
+    const { email, password, name } = data;
 
-  if (error) {
-    console.error("Signup Error:", error.message);
-    return { error };
-  }
+    const { data: authData, error: authError } = await supabase.auth.signUp({
+      email,
+      password,
+      options: {
+        data: {
+          name: name || "",
+        },
+      },
+    });
 
-  const user = data.user;
+    if (authError) throw authError;
 
-  if (user) {
-    const { error: insertError } = await supabase
-      .from("users")
-      .insert([{ id: user.id, name: name, email }]);
+    if (authData.user) {
+      const { data: userData, error: userError } = await supabase
+        .from("users")
+        .insert({
+          id: authData.user.id,
+          email,
+          name: name || "",
+          created_at: new Date().toISOString(),
+        })
+        .select();
 
-    if (insertError) {
-      console.error("Error inserting user:", insertError.message);
-      return { error: insertError };
+      if (userError) throw userError;
+      console.log("User created:", userData);
     }
-  }
 
-  return { data };
+    return { success: true, user: authData.user };
+  } catch (error) {
+    console.error("Signup error:", error);
+    return { success: false, error };
+  }
 };

@@ -11,20 +11,21 @@ export interface IRouteItem {
   element: ReactNode;
   layout?: ({ children }: { children: ReactNode }) => ReactNode;
 }
-
 export interface IAuthData {
   email: string;
   password: string;
   name?: string;
 }
+
 export interface IButton {
   text: string;
-  onClick: () => void;
+  isLoading?: boolean;
+  htmlType?: "button" | "submit" | "reset"
 }
 
 export interface IHeader {
   title: string;
-  subtitle: string;
+  subtitle?: string;
 }
 
 export interface IRedirect {
@@ -34,6 +35,6 @@ export interface IRedirect {
 }
 export interface IForm {
   title: "Log In" | "Sign Up";
-  handleAuth: (email: string, password: string) => void;
+  handleAuth: (data:any) => void;
   isSignup: boolean;
 }

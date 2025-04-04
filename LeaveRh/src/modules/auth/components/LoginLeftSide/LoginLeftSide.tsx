@@ -19,19 +19,15 @@ export default function LoginLeftSide() {
           <Form title="Log In" handleAuth={handleLogin} isSignup={false} />
         </div>
 
-        <div className="flex gap-1 items-center justify-center mt-2">
-          <p className="text-[#667085] text-sm font-normal">{`Don't have an account ?`}</p>
-          <Link
-            to={`/auth/signup`}
-            className="text-purple-700 hover:underline text-sm"
-          >
-            {"Sign Up"}
+        <div className="create-account">
+          <p>{`Don’t have an account?`}</p>
+          <Link to={`/auth/signup`} className="link-button">
+            {"Sign up"}
           </Link>
         </div>
       </div>
-      <div className="">
-        <Footer />
-      </div>
+
+      <Footer />
     </div>
   );
 }

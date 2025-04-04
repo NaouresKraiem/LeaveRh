@@ -1,13 +1,256 @@
-
 .login-left-side-form {
-  padding: 112px 300px;
+  margin: auto;
 }
+
 .login-img {
   object-fit: cover;
   height: 100%;
 }
-img {
-  background-size: cover !important;
-  background-repeat: no-repeat !important;
-  background-image: url(/src/assets/images/background.png) !important;
+.login-img img {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(/src/assets/images/background.png);
+}
+
+.login-left-side-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  width: 50%;
+}
+
+@media (max-width: 864px) {
+  .login-left-side-container {
+    width: 100%;
+    margin: auto;
+  }
+}
+
+@media (max-width: 960px) {
+  .login-left-side-container {
+    width: 100%;
+    margin: auto;
+  }
+  .login-container {
+    display: none !important;
+    width: 100%;
+  }
+}
+
+/* Background styling */
+.login-background {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  background-image: url("/src/assets/images/login.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+@media (max-width: 960px) {
+  .login-background {
+    display: none;
+  }
+}
+/* Content styling */
+.login-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  padding: 0 6rem;
+  gap: 2rem;
+}
+
+/* Header section */
+.login-header {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.stars {
+  width: 80px;
+  height: 80px;
+}
+
+.login-title {
+  color: white;
+  font-size: 3rem;
+  font-weight: 500;
+}
+
+.login-description {
+  color: #b0b0b0;
+  font-size: 1rem;
+}
+
+/* Avatars and join text */
+.avatars {
+  width: 152px;
+  height: 40px;
+}
+
+.join-text {
+  color: white;
+  display: flex;
+}
+
+/* Container for the left side */
+.signup-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+  padding: 2rem;
+}
+
+/* Form wrapper */
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Form content */
+.signup-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* Logo */
+.signup-logo {
+  width: 150px;
+  height: auto;
+  margin-bottom: 1.5rem;
+}
+
+/* Footer text */
+.signup-footer {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+/* Text color and styling */
+.signup-text {
+  color: #667085;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+/* Link styling */
+.signup-link {
+  color: #7c3aed;
+  font-size: 14px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.signup-link:hover {
+  text-decoration: underline;
+}
+
+/* Footer container */
+.footer-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+}
+
+/* Container for the login section */
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+  /* padding: 2rem; */
+}
+
+/* Form wrapper */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Form content */
+.login-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+/* Logo */
+.login-logo {
+  width: 150px;
+  height: auto;
+  margin-bottom: 1.5rem;
+}
+
+/* Footer text */
+.login-footer {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+/* Text styling */
+.login-text {
+  color: #667085;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+/* Link styling */
+.login-link {
+  color: #7c3aed;
+  font-size: 14px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.login-link:hover {
+  text-decoration: underline;
+}
+
+/* Footer container */
+.footer-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+}
+
+.create-account {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+.create-account p {
+  color: #667085;
+  margin-right: 5px;
+}
+
+.link-button {
+  color: #6941c6;
+  font-size: 14px;
+  font-weight: 700;
 }

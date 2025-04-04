@@ -1,5 +1,5 @@
 import { message } from "antd";
-import  supabase  from "../../supabaseClient";
+import supabase from "../../supabaseClient";
 
 export const handleLogin = async (email: string, password: string) => {
   const { data: session, error } = await supabase.auth.signInWithPassword({
@@ -11,7 +11,7 @@ export const handleLogin = async (email: string, password: string) => {
     const token = session?.session?.access_token;
     if (token) {
       message.success("Logged in successfully !");
-      window.location.href = "/";
+      window.location.href = "/admin/dashboard";
     }
   }
 };
