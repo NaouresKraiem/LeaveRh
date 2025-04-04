@@ -1,13 +1,13 @@
-import LoginLeftSide from "../../components/LoginLeftSide/LoginLeftSide";
+import SignupLeftSide from "../../components/SignupLeftSide/SignupLeftSide";
 import LoginRightSide from "../../components/LoginRightSide/LoginRightSide";
 import "../Auth.css";
-const Login = () => {
+const Signup = () => {
   return (
     <div className="auth-bg-container">
-      <LoginLeftSide />
+      <SignupLeftSide />
       <LoginRightSide />
     </div>
   );
 };
 
-export default Login;
+export default Signup;

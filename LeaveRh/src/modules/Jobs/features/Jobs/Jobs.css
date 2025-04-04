@@ -1,0 +1,23 @@
+.jobs-page {
+  padding: 24px;
+}
+
+.job-card {
+  height: 100%;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+}
+
+.job-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.job-card .ant-card-actions {
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.ant-tabs-nav {
+  margin-bottom: 24px !important;
+}
